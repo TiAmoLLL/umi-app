@@ -15,9 +15,20 @@ export default defineConfig({
       redirect: '/home',
     },
     {
+      name: '登录',
+      path: '/login',
+      component: './Login', // 添加 Login 路由
+      layout: false, // 不使用主布局
+    },
+    {
       name: '首页',
       path: '/home',
       component: './Home',
+    },
+    {
+      name: '用户管理',
+      path: '/user',
+      component: './User',
     },
     {
       name: '权限演示',
@@ -31,4 +42,14 @@ export default defineConfig({
     },
   ],
   npmClient: 'yarn',
+  proxy: {
+    '/api': {
+      // 'target': 'http://192.168.2.74:5678',
+      // 'target': 'http://10.0.0.95:18099',
+      // 'target': 'https://xxx.cityme.com.cn',
+      target: 'http://localhost:3001',
+      changeOrigin: true,
+      // 'pathRewrite': { '^/api': '' },
+    },
+  },
 });

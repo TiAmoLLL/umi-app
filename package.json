@@ -14,7 +14,9 @@
     "@ant-design/icons": "^5.0.1",
     "@ant-design/pro-components": "^2.4.4",
     "@umijs/max": "^4.3.14",
-    "antd": "^5.4.0"
+    "antd": "^5.4.0",
+    "jsencrypt": "^3.3.2",
+    "umi-request": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.33",
