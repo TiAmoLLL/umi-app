@@ -7,7 +7,7 @@ import styles from './index.less';
 
 const HomePage: React.FC = () => {
   const { name } = useModel('global');
-  // console.log('hello world')
+  console.log('hello world');
   const init = () => {
     // let url = `/api/homePage/details`
     // const { data } = request(url, {

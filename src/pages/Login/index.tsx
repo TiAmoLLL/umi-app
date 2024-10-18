@@ -13,7 +13,7 @@ type FieldType = {
   remember?: string;
 };
 
-const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
+const onFinish: FormProps<FieldType>['onFinish'] = async (values: any) => {
   console.log('Success:', values);
   let params = {
     // account: encrypt(values.user),
@@ -30,13 +30,15 @@ const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
     headers: {
       'Content-Type': 'application/json', // 明确指定 JSON 格式
     },
-  }).then((resp) => {
+  }).then((resp: any) => {
     console.log(resp);
     if (resp.code === 200) {
+      console.log('登录成功');
       tools.data.set('user', {
         token: resp.data.access_token,
         name: resp.data.user.account,
       });
+      console.log('跳转到home');
       window.location.href = '/home';
     }
   });

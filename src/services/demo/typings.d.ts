@@ -48,12 +48,12 @@ declare namespace API {
 
   interface UserInfo {
     id?: string;
-    name?: string;
+    account?: string;
     /** nick */
-    nickName?: string;
+    password?: string;
     /** email */
-    email?: string;
-    gender?: UserGenderEnum;
+    username?: string;
+    role?: string;
   }
 
   interface UserInfoVO {
