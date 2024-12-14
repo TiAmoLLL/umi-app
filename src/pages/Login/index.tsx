@@ -20,6 +20,7 @@ const onFinish: FormProps<FieldType>['onFinish'] = async (values: any) => {
     account: values.user,
     // password: encrypt(values.password),
     password: values.password,
+    userType: 'admin',
   };
   // let url = `/api/manager/auth/login`
   let url = `/api/auth/login`;

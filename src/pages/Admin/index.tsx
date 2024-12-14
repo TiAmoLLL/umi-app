@@ -25,7 +25,7 @@ const App: React.FC = () => {
   };
 
   const init = (value: any = null) => {
-    let url = `/api/user/findAll`;
+    let url = `/api/admin_user/findAll`;
     request(url, {
       method: 'GET',
       params: { ...value },
@@ -51,7 +51,7 @@ const App: React.FC = () => {
    * 删除节点
    */
   const handleDelete = (value: any) => {
-    let url = `/api/user/delete/${value}`;
+    let url = `/api/admin_user/delete/${value}`;
     request(url, {
       method: 'Delete',
     })
@@ -75,7 +75,7 @@ const App: React.FC = () => {
    */
   const handleAdd = async (fields: API.UserInfo) => {
     const hide = message.loading('正在添加');
-    let url = `/api/user/create`;
+    let url = `/api/admin_user/create`;
     request(url, {
       method: 'POST',
       data: fields,
@@ -100,7 +100,7 @@ const App: React.FC = () => {
    */
   const handleUpdate = async (fields: API.UserInfo) => {
     const hide = message.loading('正在修改');
-    let url = `/api/user/update`; // 假设修改用户的 API 地址
+    let url = `/api/admin_user/update`; // 假设修改用户的 API 地址
 
     request(url, {
       method: 'PUT', // 修改使用 PUT 请求
@@ -157,6 +157,7 @@ const App: React.FC = () => {
       title: '角色',
       dataIndex: 'role',
       key: 'role',
+      render: (text) => <>{text === 'admin' ? '管理员' : '普通用户'}</>,
       align: 'center', // 居中
     },
     {

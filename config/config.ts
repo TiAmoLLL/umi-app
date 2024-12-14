@@ -26,9 +26,19 @@ export default defineConfig({
       component: './Home',
     },
     {
+      name: '账号管理',
+      path: '/admin',
+      component: './Admin',
+    },
+    {
       name: '用户管理',
       path: '/user',
       component: './User',
+    },
+    {
+      name: '商品管理',
+      path: '/goods',
+      component: './Goods',
     },
     {
       name: '权限演示',
@@ -51,5 +61,9 @@ export default defineConfig({
       changeOrigin: true,
       // 'pathRewrite': { '^/api': '' },
     },
+  },
+  define: {
+    'process.env.REACT_APP_BASE_URL':
+      process.env.REACT_APP_BASE_URL || 'http://localhost:3001', // 引入环境变量
   },
 });
